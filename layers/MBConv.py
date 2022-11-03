@@ -1,6 +1,6 @@
 import torch.nn as nn 
 from func import Swish
-from SEblock import SEBlock
+from layers.SEblock import SEBlock
 import torch 
 
 class MBConv(nn.Module):

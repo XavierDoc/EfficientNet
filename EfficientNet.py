@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
-from MBConv import MBConv
+from layers.MBConv import MBConv
 from func import Swish
-from SepConv import SepConv
+from layers.SepConv import SepConv
 
 class EfficientNet(nn.Module):
     def __init__(self, num_classes=10, width_coef=1., depth_coef=1., scale=1., dropout=0.2, se_scale=4, stochastic_depth=False, p=0.5):

@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
-from SEblock import SEBlock
+from layers.SEblock import SEBlock
 from func import Swish
-from SepConv import SepConv
+from layers.SepConv import SepConv
 
 class SepConv(nn.Module):
     expand = 1

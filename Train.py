@@ -4,7 +4,6 @@ from torch import optim
 import time
 import copy
 from EfficientNet import efficientnet_b0
-
 import os  
 from cifar10 import build_cifar10
 import json
