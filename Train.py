@@ -118,7 +118,7 @@ def train_val(model, params):
         if val_loss < best_loss:
             best_loss = val_loss
             best_model_wts = copy.deepcopy(model.state_dict())
-            torch.save(model.state_dict(), path2weights)
+            torch.save(model.state_dict(), path2weights+str(best_loss))
             print('Copied best model weights!')
 
         lr_scheduler.step(val_loss)

@@ -20,6 +20,8 @@ plt.legend()
 # plt.show()
 plt.savefig('result/loss.png')
 
+plt.clf()
+
 # plot train-val accuracy
 plt.title('Train-Val Accuracy')
 plt.plot(range(1, num_epochs+1), metric_hist['train'], label='train')
