@@ -55,9 +55,9 @@ class SEBlock(nn.Module):
 
         self.squeeze = nn.AdaptiveAvgPool2d((1,1))
         self.excitation = nn.Sequential(
-            nn.Linear(in_channels, in_channels * r),
+            nn.Linear(in_channels, in_channels // r),
             Swish(),
-            nn.Linear(in_channels * r, in_channels),
+            nn.Linear(in_channels // r, in_channels),
             nn.Sigmoid()
         )
 

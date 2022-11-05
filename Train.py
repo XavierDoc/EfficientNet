@@ -24,7 +24,7 @@ model = efficientnet_b0().to(device)
 
 # define loss function, optimizer, lr_scheduler
 loss_func = nn.CrossEntropyLoss(reduction='sum')
-opt = optim.Adam(model.parameters(), lr=0.01)
+opt = optim.Adam(model.parameters(), lr=1e-4)
 
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 lr_scheduler = ReduceLROnPlateau(opt, mode='min', factor=0.1, patience=10)

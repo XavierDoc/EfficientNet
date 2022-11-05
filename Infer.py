@@ -29,7 +29,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = efficientnet_b0().to(device)
 model.load_state_dict(torch.load(''))#need pt file path
 
-outputs = model(images)
+outputs = model(images)  
 
 _, predicted = torch.max(outputs, 1)
 
