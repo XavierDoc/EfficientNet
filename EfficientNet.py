@@ -30,7 +30,7 @@ class EfficientNet(nn.Module):
 
         self.stage1 = nn.Sequential(
             nn.Conv2d(3, channels[0],3, stride=2, padding=1, bias=False),
-            nn.BatchNorm2d(channels[0], momentum=0.99, eps=1e-3)
+            nn.BatchNorm2d(channels[0], momentum=0.99)###
         )
 
         self.stage2 = self._make_Block(SepConv, repeats[0], channels[0], channels[1], kernel_size[0], strides[0], se_scale)
@@ -49,7 +49,7 @@ class EfficientNet(nn.Module):
 
         self.stage9 = nn.Sequential(
             nn.Conv2d(channels[7], channels[8], 1, stride=1, bias=False),
-            nn.BatchNorm2d(channels[8], momentum=0.99, eps=1e-3),
+            nn.BatchNorm2d(channels[8], momentum=0.99),###
             Swish()
         ) 
 
