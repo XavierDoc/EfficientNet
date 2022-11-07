@@ -8,6 +8,14 @@ import numpy as np
 build_data = build_cifar10(False)
 train_dataset, val_dataset = build_data
 
+train_loader = torch.utils.data.DataLoader(train_dataset,
+                                            batch_size=32,
+                                            pin_memory=True)
+
+val_loader = torch.utils.data.DataLoader(val_dataset,
+                                            batch_size=32,
+                                            pin_memory=True)
+
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 
 def imshow(img):
@@ -16,7 +24,7 @@ def imshow(img):
     plt.imshow(np.transpose(npimg, (1, 2, 0)))
     plt.show()
 
-dataiter = iter(val_dataset)
+dataiter = iter(val_loader)
 images, labels = dataiter.next()
 
 # show images
